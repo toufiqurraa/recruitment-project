@@ -7,7 +7,6 @@ function coundDownSqn(arr: number[]) {
 
   if (arr.length == 0) return (result = [x, []]);
   else {
-    console.log('ss');
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] === 1) {
         x++;
