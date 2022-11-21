@@ -1,32 +1,42 @@
 function coundDownSqn(arr: number[]) {
-  const result: any = []
+  let result: any = [];
 
-  let x: number = 0
+  let x: number = 0;
 
-  let y: number[][] = []
+  let y: number[] = [];
+
+  if (!arr.length) result = [0, []];
 
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == 1) x++
+    console.log(arr[i]);
 
-    let newArr: number[] = []
-
-    if (arr[i] - arr[i + 1] == 1 || arr[i] == 1) {
-      while (arr[i] >= 1) {
-        newArr = Array.of(arr[i])
-
-        break
-      }
+    if (arr[i] === 1) {
+      x++;
+      y.push(arr[i]);
     }
 
-    y.push(newArr)
+    if (arr[i] - arr[i + arr[i] - 1] === arr[i + 1]) {
+      y.push(arr[i]);
+    }
   }
 
-  result.push(x)
-  result.push(y)
+  let new_list: number[] = [];
 
-  console.log(result)
+  for (let i = 0; i <= y.length; i++) {
+    new_list.push(y[i]);
+
+    if (y[i] == 1) {
+      result.push(new_list);
+
+      new_list = [];
+    }
+  }
+
+  result.unshift(x);
+
+  return result;
 }
 
-coundDownSqn([4, 3, 2, 1, 3, 2, 1, 1])
+console.log(coundDownSqn([]));
 // coundDownSqn([1, 1, 2, 1])
 // coundDownSqn([4, 8, 3, 2, 1, 2])
