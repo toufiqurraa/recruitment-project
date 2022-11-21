@@ -1,22 +1,22 @@
 function coundDownSqn(arr: number[]) {
-  let result: any = [];
+  let result:  = [];
 
   let x: number = 0;
 
   let y: number[] = [];
 
-  if (!arr.length) result = [0, []];
+  if (arr.length == 0) return (result = [x, []]);
+  else {
+    console.log('ss');
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === 1) {
+        x++;
+        y.push(arr[i]);
+      }
 
-  for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
-
-    if (arr[i] === 1) {
-      x++;
-      y.push(arr[i]);
-    }
-
-    if (arr[i] - arr[i + arr[i] - 1] === arr[i + 1]) {
-      y.push(arr[i]);
+      if (arr[i] - arr[i + arr[i] - 1] === arr[i + 1]) {
+        y.push(arr[i]);
+      }
     }
   }
 
@@ -37,6 +37,5 @@ function coundDownSqn(arr: number[]) {
   return result;
 }
 
-console.log(coundDownSqn([]));
-// coundDownSqn([1, 1, 2, 1])
+// console.log(coundDownSqn([]));
 // coundDownSqn([4, 8, 3, 2, 1, 2])
